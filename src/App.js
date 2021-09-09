@@ -1,9 +1,9 @@
 
 import './App.css';
 import {createBrowserHistory} from 'history'
-import {Router, Switch} from 'react-router'
+import {Router, Switch} from 'react-router-dom'
 import { HomeTemplate } from './templates/HomeTemplate/HomeTemplate';
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 
 export const history = createBrowserHistory();
 
