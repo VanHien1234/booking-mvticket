@@ -12,6 +12,8 @@ import {store} from './redux/configStore'
 import 'antd/dist/antd.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import "@fancyapps/ui/dist/fancybox.css";
+import 'react-fancybox/lib/fancybox.css'
 import './index.css';
 ReactDOM.render(
   <React.StrictMode>
