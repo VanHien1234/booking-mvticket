@@ -12,9 +12,9 @@ export default function HomeCarousel(props) {
         dispatch(getCarouselAct())
     },[])
 
-    const {arrImg} = useSelector(state=>state.CarouselReducer)
+    const {arrImg} = props
 
-    console.log('st1',arrImg)
+    
 
     
 

@@ -14,22 +14,11 @@ export default function MovieList(props) {
     },[])
 
 
-    const {arrFilm} = useSelector(state=>state.MovieListReducer)
+    /* const {arrFilm} = useSelector(state=>state.MovieListReducer) */
 
+    const {arrFilm} = props
 
-
-    console.log('arrfilm ', arrFilm)
- /*
-    const renderFilm = ()=>{
-        return arrFilm.map((film,index)=>{
-            return <div key={index}>
-                <MovieCard film={film} />
-            </div>
-          
-            
-        })
-    } */
-
+    
     return (
         
         <div className ="container mt-5">

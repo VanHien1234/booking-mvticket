@@ -7,7 +7,7 @@ export const MovieListAction =()=>{
     return async (dispatch) =>{
         try {
             const result = await fecthAllMovieApi()
-            console.log('result111111',result.data.content )
+            console.log('all movie',result.data.content )
             dispatch({
                 type : FETCH_ALL_MOVIE,
                 arrFilm : result.data.content

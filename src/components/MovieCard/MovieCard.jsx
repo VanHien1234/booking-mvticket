@@ -17,7 +17,7 @@ export default function MovieCard(props) {
     return (
 
         <div className="movie-card text-center" style={{ padding: '10px' }} >
-            <div className="movie-header" style={{ backgroundImage: `url(${film.hinhAnh})` }} /* style={{backgroundImage : "url()"}} */>
+            <div className="movie-header" style={{ backgroundImage: `url(${film.hinhAnh})` }} >
                 <div className="header-icon-container">
                     <a href={film.trailer} data-fancybox={film.maPhim}>
                         <i className="fas fa-play header-icon"></i>
