@@ -6,6 +6,8 @@ import { HomeTemplate } from './templates/HomeTemplate/HomeTemplate';
 import Home from './pages/Home/Home'
 import { UserTemplate } from 'templates/UserTemplate/UserTemplate';
 import Login from './pages/Login/Login'
+import CheckoutTemplate from 'templates/CheckoutTemplate/CheckoutTemplate';
+import Checkout from 'pages/Checkout/Checkout';
 
 export const history = createBrowserHistory();
 
@@ -16,9 +18,9 @@ function App() {
       <Switch>
         <HomeTemplate path="/" exact Component={Home} />
 
-
-
         <UserTemplate path="/login" exact Component={Login}/>
+        <CheckoutTemplate path="/checkout/:id" exact component={Checkout} />
+        
       </Switch>
       
     </Router>

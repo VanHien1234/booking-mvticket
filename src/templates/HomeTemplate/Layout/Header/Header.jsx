@@ -21,8 +21,11 @@ export default function Header(props) {
                             {/* <form className="form-inline mr-auto" target="_self">
                                 <div className="form-group"><label htmlFor="search-field"><i className="fa fa-search text-white" /></label><input className="form-control search-field" type="search" id="search-field" name="search" /></div>
                             </form> */}
-                            <span className="navbar-text"> 
-                            <Button className="mr-3" type="primary">Login</Button>
+                            <span className="navbar-text">
+                            <NavLink to={`/login`}>
+                                <Button className="mr-3" type="primary">Login</Button>
+                            </NavLink>
+                            
                             <a className="btn btn-light action-button mr-3" role="button" href="#">Signup</a></span>
                         </div>
                     </div>
