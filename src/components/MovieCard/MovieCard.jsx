@@ -35,7 +35,7 @@ export default function MovieCard(props) {
                         </Link>
                         
                         {/* <div className="col-2"></div> */}
-                        <Link to="/" className="col-5 mx-auto">
+                        <Link to={`/detail/${film.maPhim}`} className="col-5 mx-auto">
                         <Button   type="primary" shape="round"  size='medium'>Chi Tiet</Button>
                         </Link>
                         

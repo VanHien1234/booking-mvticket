@@ -1,5 +1,5 @@
-import { FETCH_ALL_MOVIE, FETCH_PHIM_DANG_CHIEU,FETCH_PHIM_HOT,FETCH_PHIM_SAP_CHIEU } from "redux/types/MovieListType"
-
+import { FETCH_ALL_MOVIE, FETCH_PHIM_DANG_CHIEU, FETCH_PHIM_HOT,FETCH_PHIM_SAP_CHIEU } from "redux/types/MovieListType"
+import { SET_CHI_TIET_PHIM } from '../types/QuanLyRapType'
  
 const stateDefault ={
     arrFilm : [{
@@ -16,8 +16,10 @@ const stateDefault ={
         "dangChieu": false,
         "sapChieu": true */
     }],
-    arrFilmBackup:[]
+    arrFilmBackup:[],
+    filmDetail:{},
 
+    thongTinPhim:{}
 }
 
 export const MovieListReducer = (state = stateDefault,action) =>{
@@ -41,6 +43,11 @@ export const MovieListReducer = (state = stateDefault,action) =>{
             state.arrFilm=state.arrFilmBackup.filter(film=>film.hot===true);
             
             return{...state}
+        }
+
+        case SET_CHI_TIET_PHIM:{
+            state.filmDetail = action.filmDetail;
+            return {...state};
         }
         default : return{... state}
     }
