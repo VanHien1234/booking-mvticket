@@ -17,6 +17,7 @@ import Register from 'pages/Register/Register';
 import AddShowTime from 'adminPage/Films/AddFilmShowTime';
 import FilmShowTime from 'adminPage/Films/FilmShowTime';
 import UserProfile from 'pages/UserProfile/UserProfile';
+import EditUser from 'adminPage/User/EditUser';
 
 export const history = createBrowserHistory();
 
@@ -37,6 +38,7 @@ function App() {
         <AdminTemplate path="/admin/films/addnew" exact Component={AddFilm}/>
         <AdminTemplate path="/admin/films/addshowtime/:id" exact Component={AddShowTime}/>
         <AdminTemplate path="/admin/films/showtime/:id" exact Component={FilmShowTime}/>
+        <AdminTemplate path="/admin/user/editUser/:id" exact Component={EditUser}/>
         
       </Switch>
       

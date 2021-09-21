@@ -1,7 +1,7 @@
 import React,{useEffect,Fragment} from 'react'
 import { NavLink } from 'react-router-dom';
 import { Table,Space,Input } from 'antd'
-import {EditOutlined,DeleteOutlined,CalendarOutlined } from '@ant-design/icons';
+import {EditOutlined,DeleteOutlined,CalendarOutlined,PlusSquareOutlined } from '@ant-design/icons';
 import { useSelector,useDispatch } from 'react-redux';
 import { UserListAction } from 'redux/actions/QuanLyUserAction';
 
@@ -56,6 +56,37 @@ export default function User() {
             width: '15%'
             
         },
+        {title: 'Hành động',
+        dataIndex: 'taiKhoan',
+        render: (text, tk) => {
+            return <div className="text-center">
+
+               {/*  Edit-button */}
+                <NavLink key={1} className=" mr-3" to={`/admin/user/editUser/${tk.taiKhoan}`}><EditOutlined style={{ color: 'blue',fontSize:'25px' }} /> </NavLink>
+
+                {/*  Delete-button */}
+                <span style={{ cursor: 'pointer' }} key={2}  onClick={() => {
+                    //Gọi action xoá
+                    if (window.confirm('Bạn có chắc muốn xoá  ' + tk.taiKhoan)) {
+                        //Gọi action
+                       /*  dispatch(deleteMovieAction(film.maPhim)); */
+                    }
+
+
+                }}><DeleteOutlined style={{ color: 'red',fontSize:'25px' }} /> </span>
+
+
+                {/*  LichChieu-button */}
+                <NavLink key={1} className=" ml-3 " to={`/admin/user/inforUser/${tk.taiKhoan}`} onClick={()=>{
+                    localStorage.setItem('UserParams',JSON.stringify(tk));
+                }}><PlusSquareOutlined  style={{ color: 'green',fontSize:'25px' }} /> </NavLink>
+
+            </div>
+        },
+        sortDirections: ['descend', 'ascend'],
+        width: '25%'
+    }
+        
     ]
 
 
