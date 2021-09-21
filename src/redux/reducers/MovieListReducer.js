@@ -1,22 +1,15 @@
-import { FETCH_ALL_MOVIE, FETCH_PHIM_DANG_CHIEU,FETCH_PHIM_HOT,FETCH_PHIM_SAP_CHIEU } from "redux/types/MovieListType"
+import { FETCH_ALL_MOVIE, FETCH_PHIM_DANG_CHIEU,FETCH_PHIM_HOT,FETCH_PHIM_SAP_CHIEU, GET_MOVIE_DETAIL } from "redux/types/MovieListType"
 
  
 const stateDefault ={
     arrFilm : [{
-        /* "maPhim": 5030,
-        "tenPhim": "Godzilla vs. Kong",
-        "biDanh": "godzilla-vs-kong",
-        "trailer": "https://www.youtube.com/embed/odM92ap8_c0",
-        "hinhAnh": "http://movieapi.cyberlearn.vn/hinhanh/godzilla-vs-kong_gp01.jpg",
-        "moTa": "King Kong is transported out of his containment zone after Godzilla resurfaces and creates mayhem. Humans need his help to reach Hollow Earth and find a way to subdue the king of the monsters.",
-        "maNhom": "GP01",
-        "ngayKhoiChieu": "2021-08-29T20:12:07.403",
-        "danhGia": 10,
-        "hot": true,
-        "dangChieu": false,
-        "sapChieu": true */
+        
     }],
-    arrFilmBackup:[]
+    arrFilmBackup:[],
+
+    arrMovieDetailAdmin:[{
+        
+      }]
 
 }
 
@@ -40,6 +33,10 @@ export const MovieListReducer = (state = stateDefault,action) =>{
         case FETCH_PHIM_HOT:{
             state.arrFilm=state.arrFilmBackup.filter(film=>film.hot===true);
             
+            return{...state}
+        }
+        case GET_MOVIE_DETAIL:{
+            state.arrMovieDetailAdmin = action.arrMovieDetail
             return{...state}
         }
         default : return{... state}

@@ -10,13 +10,22 @@ export class QuanLyUserApi extends baseService {
     dangNhap=(thongTinDangNhap)=>{    //thongTinDangNhap:ID,Password
         return this.post(`QuanLyNguoiDung/DangNhap`,thongTinDangNhap)
     }
-    layDanhSachHeThongRap = () => {
-        return this.get(`QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=${GROUP_ID}`)
+    UserList=(tuKhoa='')=>{
+        if(tuKhoa.trim()!=''){
+            return this.get(`QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=${GROUP_ID}&tuKhoa=${tuKhoa}`)
+        }
+        return this.get(`QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=${GROUP_ID}`)    
+        
     }
-    
-    fetchMovieDetailApi = (movieId) => {
-        return this.get(`QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${movieId}`);
+    dangKy=(thongTinDangKy) =>{
+        return this.post(`QuanLyNguoiDung/DangKy`,thongTinDangKy)
+    }
+    UserProffile=()=>{
+        return this.get(`QuanLyNguoiDung/ThongTinTaiKhoan`)
     }
 }
 
-export const dangNhap  = new QuanLyUserApi().dangNhap
+export const UserApi = new QuanLyUserApi();
+
+export const dangNhap  = new QuanLyUserApi().dangNhap;
+
