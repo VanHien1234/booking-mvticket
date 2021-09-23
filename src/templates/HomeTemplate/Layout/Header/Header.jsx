@@ -15,11 +15,11 @@ export default function Header(props) {
         if (_.isEmpty(userLogin)) {
             return <Fragment>
                 <NavLink to={`/login`}>
-                    <Button className="mr-4" type="primary">Login</Button>
+                    <Button className=" mr-4" style={{backgroundColor:'green',border:'none'}} type="primary" shape="round" size="large">Login</Button>
                 </NavLink>
 
                 <NavLink to={`/register`}>
-                    <Button className="mr-3" type="primary">Register</Button>
+                    <Button className=" mr-3" type="primary" shape="round" size="large">Register</Button>
                 </NavLink>
             </Fragment>
         }
