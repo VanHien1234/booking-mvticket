@@ -21,7 +21,16 @@ export class QuanLyUserApi extends baseService {
         return this.post(`QuanLyNguoiDung/DangKy`,thongTinDangKy)
     }
     UserProffile=()=>{
-        return this.get(`QuanLyNguoiDung/ThongTinTaiKhoan`)
+        return this.post(`QuanLyNguoiDung/ThongTinTaiKhoan`)
+    }
+    UpdateUser=(formData)=>{
+        return this.post(`QuanLyNguoiDung/CapNhatThongTinNguoiDung`,formData)
+    }
+    DeleteUser=(taiKhoan)=>{
+        return this.delete(`QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${taiKhoan}`)
+    }
+    AdminAddNewUser=(thongTinDangKy)=>{
+        return this.post(`QuanLyNguoiDung/ThemNguoiDung`,thongTinDangKy)
     }
 }
 

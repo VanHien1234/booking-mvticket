@@ -4,6 +4,7 @@ import {useDispatch } from 'react-redux'
 import './Login.css'
 import { DangNhapAction } from 'redux/actions/QuanLyUserAction';
 import { useSelector } from 'react-redux';
+import { history } from "../../App";
 
 export default function Login() {
 
@@ -37,7 +38,7 @@ export default function Login() {
                         <input type="password" name="matKhau" onChange={formik.handleChange} />
                         <label>Password</label>
                     </div>
-                    <p>{arrResponse.content}</p>
+                    <i style={{color:'red'}} >{arrResponse.content}</i>
                     <a className="ml-3" >
                         <button style={{background:'none',border:'none',fontSize:'16px',textTransform:'uppercase',letterSpacing:'4px'}}>
                         <span />
@@ -50,11 +51,14 @@ export default function Login() {
                         
                     </a>
                     <a className="ml-5" href="#">
+                    <button style={{background:'none',border:'none',fontSize:'16px',textTransform:'uppercase',letterSpacing:'4px'}}
+                        onClick={()=>{history.push('/register')}}>
                         <span />
                         <span />
                         <span />
                         <span />
-                        SignUp
+                        Signup
+                        </button>
                     </a>
                 </form>
             </div>

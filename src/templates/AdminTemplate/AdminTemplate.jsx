@@ -126,3 +126,4 @@ const AdminTemplate = (props) => { //path, exact, Component
 
 
 export default AdminTemplate;
+

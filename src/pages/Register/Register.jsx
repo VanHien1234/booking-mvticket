@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 
 export default function Register() {
     
-    const {arrResponse} = useSelector(state=>state.UserReducer) 
-    console.log('arrResponse',arrResponse) 
+    const {arrResponseDK} = useSelector(state=>state.UserReducer) 
+    console.log('arrResponseDK',arrResponseDK) 
     const dispatch = useDispatch()
 
     const formik = useFormik({
@@ -62,7 +62,7 @@ export default function Register() {
                             <input type="password" name="matKhau" className="form-control" id="exampleInputPassword1" placeholder="elonmusk79!" required onChange={formik.handleChange} />
                         </div>
                     </div>
-                    <p className="error-text mt-3">{arrResponse.content}  Vui Lòng Thử Lại</p>
+                    <p className="error-text mt-3">{arrResponseDK.content}  </p>
                     <button className="btn btn-primary btn-block mt-3" type="submit">Sign Up</button>
                     
                     <div className="mt-3 mb-3 text-center" style={{color:'white'}}>

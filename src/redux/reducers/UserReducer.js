@@ -25,11 +25,11 @@ export const UserReducer = (state=stateDefault,action) =>{
             return {...state,userLogin:thongTinDangNhap}
         }
         case LOGIN_FAIL:{
-            state.arrResponse = action.thongTinDangNhap
+            state.arrResponse = action.errorthongTinDangNhap
             return{...state}
         }
         case SIGNUP_FAIL:{
-            state.arrResponse = action.thongTinDangKy
+            state.arrResponseDK = action.errorthongTinDangKy
             return{...state}
         }
 

@@ -84,9 +84,11 @@ const EditFilm = (props) => {
 
     //xu ly true false switch
     const handleChangeSwitch = (name) => {
-
+        console.log('testttttmame',name)
         return (value) => {
             formik.setFieldValue(name, value)
+            console.log('test value',value)
+            console.log('test name',name)
         }
     }
 

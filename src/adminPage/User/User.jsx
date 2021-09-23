@@ -1,9 +1,9 @@
 import React,{useEffect,Fragment} from 'react'
 import { NavLink } from 'react-router-dom';
-import { Table,Space,Input } from 'antd'
-import {EditOutlined,DeleteOutlined,CalendarOutlined,PlusSquareOutlined } from '@ant-design/icons';
+import { Table,Space,Input,Button } from 'antd'
+import {SearchOutlined,EditOutlined,DeleteOutlined,CalendarOutlined,PlusSquareOutlined,PlusOutlined } from '@ant-design/icons';
 import { useSelector,useDispatch } from 'react-redux';
-import { UserListAction } from 'redux/actions/QuanLyUserAction';
+import { UserListAction,DeleteUserAction } from 'redux/actions/QuanLyUserAction';
 
 
 const { Search } = Input;
@@ -65,21 +65,14 @@ export default function User() {
                 <NavLink key={1} className=" mr-3" to={`/admin/user/editUser/${tk.taiKhoan}`}><EditOutlined style={{ color: 'blue',fontSize:'25px' }} /> </NavLink>
 
                 {/*  Delete-button */}
-                <span style={{ cursor: 'pointer' }} key={2}  onClick={() => {
+                <span className="ml-3" style={{ cursor: 'pointer' }} key={2}  onClick={() => {
                     //Gọi action xoá
                     if (window.confirm('Bạn có chắc muốn xoá  ' + tk.taiKhoan)) {
-                        //Gọi action
-                       /*  dispatch(deleteMovieAction(film.maPhim)); */
+                        dispatch(DeleteUserAction(tk.taiKhoan));
                     }
 
 
-                }}><DeleteOutlined style={{ color: 'red',fontSize:'25px' }} /> </span>
-
-
-                {/*  LichChieu-button */}
-                <NavLink key={1} className=" ml-3 " to={`/admin/user/inforUser/${tk.taiKhoan}`} onClick={()=>{
-                    localStorage.setItem('UserParams',JSON.stringify(tk));
-                }}><PlusSquareOutlined  style={{ color: 'green',fontSize:'25px' }} /> </NavLink>
+                }}><DeleteOutlined style={{ color: 'red',fontSize:'25px' }} /> </span> 
 
             </div>
         },
@@ -108,10 +101,14 @@ export default function User() {
             placeholder="input search text" 
             onSearch={onSearch} 
             allowClear
-            size="large"   
+            size="large"  
             enterButton ="Search" />
-            day la dashboard
-            <Table columns={columns} dataSource={data} onChange={onChange} />
+            <Button type="primary" shape="round" >
+                <NavLink to={`/admin/user/addnewUser`}>
+                + Add New User
+                </NavLink>
+                </Button>
+            <Table className="mt-3" columns={columns} dataSource={data} onChange={onChange} />
         </div>
     )
 }

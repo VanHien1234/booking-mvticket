@@ -28,7 +28,7 @@ export default function Header(props) {
             onClick={() => {
                 history.push('/profile')
             }}>{userLogin.taiKhoan.substr(0, 1)}</Button>
-            <span style={{fontWeight:'bold'}} className="mr-4">{userLogin.hoTen}</span>
+            <NavLink to="/profile" style={{fontWeight:'bold',color:'#F6EB83'}} className="mr-4">{userLogin.hoTen}</NavLink>
             <Button 
             onClick={() => {
                 localStorage.removeItem(USER_LOGIN);
@@ -44,19 +44,23 @@ export default function Header(props) {
         <Fragment>
             <div className="header-movie">
                 <nav className="navbar navbar-light navbar-expand-md navigation-clean-search">
-                    <div className="container-fluid"><a className="navbar-brand" href="#">BBBOOTSTAP</a><button data-toggle="collapse" className="navbar-toggler" data-target="#navcol-1"><span className="sr-only">Toggle navigation</span><span className="navbar-toggler-icon" /></button>
+                    <div className="container-fluid"><NavLink className="navbar-brand" to="/">
+                        <img src="https://cyberlearn.vn/wp-content/uploads/2020/03/cyberlearn-min-new-opt2.png" alt="" />
+                        </NavLink><button data-toggle="collapse" className="navbar-toggler" data-target="#navcol-1"><span className="sr-only">Toggle navigation</span><span className="navbar-toggler-icon" /></button>
                         <div className="collapse navbar-collapse" id="navcol-1">
-                            <ul className="nav navbar-nav mx-auto">
-                                <li className="nav-item" role="presentation"><NavLink to="/" className="nav-link" >Lich Chieu</NavLink></li>
-                                <li className="nav-item" role="presentation"><NavLink to="/" className="nav-link" >Tin Tuc</NavLink></li>
-                                <li className="nav-item" role="presentation"><NavLink to="/" className="nav-link" >Ung Dung</NavLink></li>
-                                <li className="nav-item dropdown"><NavLink className="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" to="/">Cum Rap</NavLink>
-                                    <div className="dropdown-menu" role="menu"><NavLink className="dropdown-item" role="presentation" to="/">Logo design</NavLink><NavLink className="dropdown-item" role="presentation" to="#">Banner design</NavLink><NavLink className="dropdown-item" role="presentation" to="#">content writing</NavLink></div>
+                            <ul style={{fontFamily: 'Bungee'}} className="nav navbar-nav mx-auto" >
+                                <li className="nav-item" role="presentation"><NavLink style={{color:'white',fontSize:'500'}} to="/"  className="nav-link" >Lich Chieu</NavLink></li>
+                                <li className="nav-item" role="presentation"><NavLink style={{color:'white',fontSize:'500'}} to="/" className="nav-link" >Tin Tuc</NavLink></li>
+                                <li className="nav-item" role="presentation"><NavLink style={{color:'white',fontSize:'500'}} to="/" className="nav-link" >Ung Dung</NavLink></li>
+                                <li className="nav-item dropdown"><NavLink style={{color:'white',fontSize:'500'}} className="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" to="/">Cum Rap</NavLink>
+                                    <div className="dropdown-menu" role="menu">
+                                        <NavLink className="dropdown-item"  to="/">Logo </NavLink>
+                                        {/* <NavLink className="dropdown-item" role="presentation" to="#">Banner </NavLink>
+                                        <NavLink className="dropdown-item" role="presentation" to="#">content </NavLink> */}
+                                    </div>
                                 </li>
                             </ul>
-                            {/* <form className="form-inline mr-auto" target="_self">
-                                <div className="form-group"><label htmlFor="search-field"><i className="fa fa-search text-white" /></label><input className="form-control search-field" type="search" id="search-field" name="search" /></div>
-                            </form> */}
+                            
                             <span className="navbar-text">
                                 {RenderButton()}
                             </span>
