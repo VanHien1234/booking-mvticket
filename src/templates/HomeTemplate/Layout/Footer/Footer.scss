@@ -1,5 +1,6 @@
 footer {
-    background: #222;
+    background: rgb(29,29,29);
+    background: linear-gradient(180deg, rgba(29,29,29,1) 49%, rgba(113,104,1,1) 100%);
     color: #aaa;
     padding-top: 10px;
     a{
@@ -9,7 +10,7 @@ footer {
         }
     }
     h3{
-        color: #0894d1;
+        color: #ffffff;
         letter-spacing: 1px;
         margin: 30px 0 20px;
     }
@@ -40,14 +41,17 @@ footer {
         background: rgba(0, 0, 0, 0.2);
         border: 1px solid #444;
         margin-bottom: 5px;
+        
     }
     .copyright{
         padding: 15px 0;
-        background: #333;
+        background: #5a5301;
         margin-top: 20px;
         font-size: 15px;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
         span{
-            color: #0894d1;
+            color: #ffffff;
         }
     }
 }

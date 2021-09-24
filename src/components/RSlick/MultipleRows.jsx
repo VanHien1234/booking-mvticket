@@ -4,6 +4,8 @@ import MovieCard from 'components/MovieCard/MovieCard'
 import {useSelector,useDispatch} from 'react-redux'
 import {fetchPhimDangChieuAct,fetchPhimHotAct,fetchPhimSapChieuAct} from 'redux/actions/MovieListAction'
 import { Button, Radio } from 'antd';
+import { LeftOutlined  } from '@ant-design/icons';
+import styleSlick from './SlickButton.css';
 
 
 
@@ -11,9 +13,10 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={className}
-      style={{ ...style, display: "block", background: "red" }}
+      className={`${className} ${styleSlick['slick-prev']}`}
+      style={{  ...style, display: "block"}}
       onClick={onClick}
+      
     />
   );
 }
@@ -22,10 +25,13 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={className}
-      style={{ ...style, display: "block", background: "green" }}
+    className={`${className} ${styleSlick['slick-prev']}`}
+      style={{ ...style, display: "block",left:'-45px' }}
       onClick={onClick}
-    />
+      
+    >
+      <i class="fas fa-backward"></i>
+    </div>
   );
 }
 

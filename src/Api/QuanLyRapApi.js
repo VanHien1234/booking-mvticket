@@ -19,12 +19,15 @@ export class QuanLyRapApi extends baseService {
     layThongTinCumRap = (maHeThongRap) => {
         return this.get(`/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${maHeThongRap}`);
     }
-    
-    fetchMovieDetailApi = (movieId) => {
-        return this.get(`QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${movieId}`);
+    layThongTinCumRap = (maHeThongRap) => {
+        return this.get(`QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${maHeThongRap}`);
     }
+    layThongtinLichChieuTheoFilm = (maPhim) =>{
+        return this.get(`QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`)
+    }
+    
 }
-
+export const QLRapApi = new QuanLyRapApi()
 export const layThongTinHeThongRap  = new QuanLyRapApi().layThongTinHeThongRap
 export const layDanhSachHeThongRap  = new QuanLyRapApi().layDanhSachHeThongRap
 export const fetchMovieDetailApi  = new QuanLyRapApi().fetchMovieDetailApi
