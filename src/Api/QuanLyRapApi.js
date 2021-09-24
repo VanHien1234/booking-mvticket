@@ -7,11 +7,17 @@ export class QuanLyRapApi extends baseService {
     constructor(){
         super();
     }
+
+    layDanhSachHeThongRap = () => {
+        return this.get(`QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=${GROUP_ID}`)
+    }
+
     layThongTinHeThongRap =()=>{
         return this.get(`QuanLyRap/LayThongTinHeThongRap`)
     }
-    layDanhSachHeThongRap = () => {
-        return this.get(`QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=${GROUP_ID}`)
+
+    layThongTinCumRap = (maHeThongRap) => {
+        return this.get(`/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${maHeThongRap}`);
     }
     layThongTinCumRap = (maHeThongRap) => {
         return this.get(`QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${maHeThongRap}`);
@@ -24,3 +30,5 @@ export class QuanLyRapApi extends baseService {
 export const QLRapApi = new QuanLyRapApi()
 export const layThongTinHeThongRap  = new QuanLyRapApi().layThongTinHeThongRap
 export const layDanhSachHeThongRap  = new QuanLyRapApi().layDanhSachHeThongRap
+export const fetchMovieDetailApi  = new QuanLyRapApi().fetchMovieDetailApi
+export const layThongTinCumRap  = new QuanLyRapApi().layThongTinCumRap

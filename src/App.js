@@ -8,6 +8,7 @@ import { UserTemplate } from 'templates/UserTemplate/UserTemplate';
 import Login from './pages/Login/Login'
 import CheckoutTemplate from 'templates/CheckoutTemplate/CheckoutTemplate';
 import Checkout from 'pages/Checkout/Checkout';
+import Detail from 'pages/Detail/Detail';
 import AdminTemplate from 'templates/AdminTemplate/AdminTemplate';
 import User from 'adminPage/User/User';
 import Films from 'adminPage/Films/Films';
@@ -22,6 +23,7 @@ import Radiotest from 'adminPage/User/Radiotest';
 import AddNewUser from 'adminPage/User/AddNewUser';
 import Loading from 'components/Loading/Loading';
 
+
 export const history = createBrowserHistory();
 
 function App() {
@@ -31,11 +33,10 @@ function App() {
       <Loading />
       <Switch>
         <HomeTemplate path="/" exact Component={Home} />
-        
+        <HomeTemplate path="/detail/:id" exact Component={Detail} />    
         <HomeTemplate path="/profile" exact Component={UserProfile}/>
         <UserTemplate path="/login" exact Component={Login}/>
-        <UserTemplate path="/register" exact Component={Register}/>
-        
+        <UserTemplate path="/register" exact Component={Register}/>       
         <CheckoutTemplate path="/checkout/:id" exact component={Checkout} />
         <AdminTemplate path="/admin" exact Component={User}/>
         <AdminTemplate path="/admin/films" exact Component={Films}/>

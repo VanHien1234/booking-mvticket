@@ -1,4 +1,7 @@
+
+import { SET_CHI_TIET_PHIM } from '../types/QuanLyRapType'
 import { FETCH_ALL_MOVIE, FETCH_PHIM_DANG_CHIEU,FETCH_PHIM_HOT,FETCH_PHIM_SAP_CHIEU, GET_MOVIE_DETAIL } from "redux/types/MovieListType"
+
 
  
 const stateDefault ={
@@ -7,10 +10,15 @@ const stateDefault ={
     }],
     arrFilmBackup:[],
 
+    filmDetail:{},
+
+
     arrMovieDetailAdmin:[{
         
       }]
 
+
+    thongTinPhim:{}
 }
 
 export const MovieListReducer = (state = stateDefault,action) =>{
@@ -35,9 +43,16 @@ export const MovieListReducer = (state = stateDefault,action) =>{
             
             return{...state}
         }
+
+
+        case SET_CHI_TIET_PHIM:{
+            state.filmDetail = action.filmDetail;
+            return {...state};
+
         case GET_MOVIE_DETAIL:{
             state.arrMovieDetailAdmin = action.arrMovieDetail
             return{...state}
+
         }
         default : return{... state}
     }
