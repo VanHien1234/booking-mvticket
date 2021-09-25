@@ -30,5 +30,4 @@ export class QuanLyRapApi extends baseService {
 export const QLRapApi = new QuanLyRapApi()
 export const layThongTinHeThongRap  = new QuanLyRapApi().layThongTinHeThongRap
 export const layDanhSachHeThongRap  = new QuanLyRapApi().layDanhSachHeThongRap
-export const fetchMovieDetailApi  = new QuanLyRapApi().fetchMovieDetailApi
 export const layThongTinCumRap  = new QuanLyRapApi().layThongTinCumRap

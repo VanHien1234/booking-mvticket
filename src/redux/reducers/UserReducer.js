@@ -1,4 +1,4 @@
-import { POST_LOGIN,LOGIN_FAIL,GET_USER_LIST,POST_SIGNUP,SIGNUP_FAIL,GET_USER_PROFILE } from "redux/types/UserType"
+import { POST_LOGIN,LOGIN_FAIL,GET_USER_LIST,POST_SIGNUP,SIGNUP_FAIL,GET_USER_PROFILE,SET_THONG_TIN_NGUOI_DUNG } from "redux/types/UserType"
 import { USER_LOGIN,TOKEN } from "settingAPI/apiConfig";
 
 let user = {};
@@ -9,7 +9,7 @@ if(localStorage.getItem(USER_LOGIN)) {
 
 const stateDefault = {
     userLogin: user,
-    thongTinNguoiDung: [],
+    thongTinNguoiDung: {},
     arrUserList:[],
     arrResponse:[],
     arrResponseDK:[]
@@ -36,6 +36,10 @@ export const UserReducer = (state=stateDefault,action) =>{
         case GET_USER_PROFILE:{
             state.thongTinNguoiDung =action.arrProfile
             return {...state}
+        }
+        case SET_THONG_TIN_NGUOI_DUNG :{ 
+            state.thongTinNguoiDung = action.thongTinNguoiDung;
+            return {...state};
         }
 
 

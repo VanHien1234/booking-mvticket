@@ -9,7 +9,7 @@ export default function CheckoutTemplate(props) {
         return <Redirect to='/login' />
     }   
     return (
-        <Route {...restProps} render={(propsRoute) => { //props.location,props.history,props.match
+        <Route {...restProps} render={(propsRoute) => { 
 
             return <Fragment>
                 <Component {...propsRoute} />

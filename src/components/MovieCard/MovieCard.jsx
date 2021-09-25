@@ -26,11 +26,11 @@ export default function MovieCard(props) {
             </div>{/*movie-header*/}
             <div className="movie-content" /* style={{backgroundColor : 'red'}} */>
                 <div className="movie-content-header">
-                    <a href="#">
+                    <Link to={`/detail/${film.maPhim}`}>
                         <h3 className="movie-title">{`${film.tenPhim}`.length > 17 ? <span>{film.tenPhim.slice(0, 17)} ...</span> : <span>{film.tenPhim}</span>}</h3>
-                    </a>
+                    </Link>
                     <div className="row mt-2 " >
-                        <Link to="/" className="col-5 mx-auto">
+                        <Link to={`/checkout/${film.maPhim}`} className="col-5 mx-auto">
                         <Button  style={{backgroundColor:"#ffcc00",border:'none'}}  type="primary" shape="round"  size='medium'>Đặt vé</Button>
                         </Link>
                         

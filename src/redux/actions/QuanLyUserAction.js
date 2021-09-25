@@ -1,5 +1,5 @@
 import { dangNhap, UserApi} from 'Api/QuanLyUserApi'
-import { POST_LOGIN,LOGIN_FAIL,POST_SIGNUP,SIGNUP_FAIL,GET_USER_LIST,GET_USER_PROFILE } from 'redux/types/UserType'
+import { POST_LOGIN,LOGIN_FAIL,POST_SIGNUP,SIGNUP_FAIL,GET_USER_LIST,GET_USER_PROFILE,SET_THONG_TIN_NGUOI_DUNG } from 'redux/types/UserType'
 import { history } from 'App'
 import { displayLoadingAction, hideLoadingAction } from "./LoadingAction";
 
@@ -130,4 +130,31 @@ export const AdminAddNewUserAction = (thongTinDangKy)=>{
             
         }
     }
+}
+export const layThongTinNguoiDungAction = (thongTinDangNhap) => {
+
+
+
+    return async (dispatch) => {
+
+        try {
+            const result = await UserApi.UserProffile(thongTinDangNhap);
+
+
+            if (result.data.statusCode === 200) {
+                dispatch({
+                    type: SET_THONG_TIN_NGUOI_DUNG,
+                    thongTinNguoiDung: result.data.content
+                });
+
+            }
+
+            console.log('result', result);
+
+        } catch (error) {
+            console.log('error', error.response.data);
+        }
+
+    }
+
 }

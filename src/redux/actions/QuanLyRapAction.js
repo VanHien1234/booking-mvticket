@@ -21,25 +21,3 @@ export const QuanLyRapAction =()=>{
 }
 
 
-export const layThongTinChiTietPhim = (id) => {
-    return async dispatch => {
-        try{
-            const result = await fetchMovieDetailApi(id);
-
-            console.log('result', result);
-            //Lấy được dữ liệu từ api về  => reducer
-
-            dispatch({
-                type:SET_CHI_TIET_PHIM,
-                filmDetail: result.data.content
-            })
-
-
-        }catch(errors) {
-            console.log('error', errors)
-
-        }
-    }
-
-
-}

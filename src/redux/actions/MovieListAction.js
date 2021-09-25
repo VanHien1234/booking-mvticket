@@ -1,5 +1,7 @@
 import {fecthAllMovieApi,deleteMovieApi, QLMovieApi} from 'Api/MovieApi'
-import { FETCH_ALL_MOVIE, FETCH_PHIM_DANG_CHIEU, FETCH_PHIM_SAP_CHIEU,FETCH_PHIM_HOT, GET_MOVIE_DETAIL } from 'redux/types/MovieListType'
+
+import {QLRapApi} from 'Api/QuanLyRapApi'
+import { FETCH_ALL_MOVIE, FETCH_PHIM_DANG_CHIEU, FETCH_PHIM_SAP_CHIEU,FETCH_PHIM_HOT, GET_MOVIE_DETAIL,FETCH_CHI_TIET_PHIM } from 'redux/types/MovieListType'
 import { history } from 'App'
 
 export const MovieListAction =(tenPhim='')=>{
@@ -95,3 +97,25 @@ export const fetchPhimHotAct= ()=>({
     type : FETCH_PHIM_HOT
 })
 
+export const layThongTinChiTietPhim = (id) => {
+    return async dispatch => {
+        try{
+            const result = await QLRapApi.layThongtinLichChieuTheoFilm(id);
+
+            console.log('result', result);
+            //Lấy được dữ liệu từ api về  => reducer
+
+            dispatch({
+                type:FETCH_CHI_TIET_PHIM,
+                filmDetail: result.data.content
+            })
+
+
+        }catch(error) {
+            console.log('error', error)
+
+        }
+    }
+
+
+}

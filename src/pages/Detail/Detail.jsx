@@ -2,16 +2,16 @@ import React, { useEffect } from "react";
 import "./Detail.css";
 import { Tabs, Radio, Space, Rate } from "antd";
 import { useSelector, useDispatch } from "react-redux";
-import { SET_CHI_TIET_PHIM } from "../../redux/types/QuanLyRapType";
-import { layThongTinChiTietPhim } from "redux/actions/QuanLyRapAction";
+
+import { layThongTinChiTietPhim } from "redux/actions/MovieListAction";
 import moment from "moment";
 
 const { TabPane } = Tabs;
 
 export default function Detail(props) {
-  const filmDetail = useSelector((state) => state.MovieListReducer.filmDetail);
+  const {filmDetail} = useSelector(state => state.MovieListReducer);
 
-  console.log({ filmDetail });
+  console.log( 'filmDetail',filmDetail );
 
   const dispatch = useDispatch();
 

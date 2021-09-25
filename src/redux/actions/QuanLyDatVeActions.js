@@ -1,8 +1,8 @@
-/* import { connection } from "/index";
+import { connection } from "index";
 import { QLTicket } from 'Api/TicketApi';
-import { ThongTinDatVe } from "../../_core/models/ThongTinDatVe";
-import { displayLoadingAction, hideLoadingAction } from "./LoadingActions";
-import { CHUYEN_TAB, DAT_VE, DAT_VE_HOAN_TAT, SET_CHI_TIET_PHONG_VE } from "./types/QuanLyDatVeType";
+import { ThongTinDatVe } from "_core/models/ThongTinDatVe";
+import { displayLoadingAction, hideLoadingAction } from "./LoadingAction";
+import { CHUYEN_TAB, DAT_VE, DAT_VE_HOAN_TAT, SET_CHI_TIET_PHONG_VE } from "../types/QuanLyDatVeType";
 
 
 
@@ -50,7 +50,7 @@ export const datVeAction = (thongTinDatVe = new ThongTinDatVe()) => {
             await dispatch({type:DAT_VE_HOAN_TAT})
             await dispatch(hideLoadingAction);
 
-            let userLogin = getState().QuanLyNguoiDungReducer.userLogin;
+            let userLogin = getState().UserReducer.userLogin;
              connection.invoke('datGheThanhCong',userLogin.taiKhoan,thongTinDatVe.maLichChieu);
 
             dispatch({type:CHUYEN_TAB});
@@ -79,7 +79,7 @@ export const datGheAction = (ghe,maLichChieu) => {
 
         //Call api về backend 
         let danhSachGheDangDat = getState().QuanLyDatVeReducer.danhSachGheDangDat;
-        let taiKhoan = getState().QuanLyNguoiDungReducer.userLogin.taiKhoan;
+        let taiKhoan = getState().UserReducer.userLogin.taiKhoan;
 
         console.log('danhSachGheDangDat',danhSachGheDangDat);
         console.log('taiKhoan',taiKhoan);
@@ -95,4 +95,4 @@ export const datGheAction = (ghe,maLichChieu) => {
 
     }
 
-} */
+} 
